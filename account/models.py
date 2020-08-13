@@ -97,7 +97,7 @@ class ForgotTokens(models.Model):
         return datetime.now() + timedelta(minutes=30)
 
         
-    user=models.OneToOneField(Account,on_delete=models.CASCADE)
+    user=models.ForeignKey(Account,on_delete=models.CASCADE)
 
     created_time = models.DateTimeField(default=datetime.now, blank=True)
     expiry_time = models.DateTimeField(default=now_plus_30 , blank=True)
